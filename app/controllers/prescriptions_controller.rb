@@ -1,4 +1,9 @@
 class PrescriptionsController < ApplicationController
+  def index
+    @prescriptions = Perscription.all
+  end
+
+
   def new
     @patient = Patient.find(params[:patient_id])
     @prescription = Prescription.new
@@ -19,6 +24,8 @@ class PrescriptionsController < ApplicationController
     end
 
   end
+
+
 
   private
 
